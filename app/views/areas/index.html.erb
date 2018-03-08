@@ -1,2 +1,14 @@
-<h1>Areas#index</h1>
-<p>Find me in app/views/areas/index.html.erb</p>
+<h1>ClimbCast</h1>
+<p>Your one stop solution to the age old question "Should I go climbing today or stay in and watch Netflix?"</p>
+
+<h1>Choose an Area:</h1>
+
+<% @areas.each do |area| %>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <%= link_to area.title, area %></p>
+      </h4>
+    </div>
+  </div>
+<% end %>
