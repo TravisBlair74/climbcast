@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :areas
+
+  resources :areas do
+    resources :comments, except: [:index]
+  end
 
   get 'users/show'
   devise_for :users
