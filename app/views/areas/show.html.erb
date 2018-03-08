@@ -1,2 +1,11 @@
-<h1>Areas#show</h1>
-<p>Find me in app/views/areas/show.html.erb</p>
+<h1><%= @area.title %></h1>
+
+<div class="row">
+  <div class="col-md-8">
+    <p><%= @area.body %></p>
+  </div>
+  <div class="col-md-4">
+    <%= link_to "Edit Area", edit_area_path(@area), class: 'btn btn-success' %>
+    <%= link_to "Delete Area", @area, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this area?'} %>
+  </div>
+</div>

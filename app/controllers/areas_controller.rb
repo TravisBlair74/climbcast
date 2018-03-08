@@ -4,6 +4,7 @@ class AreasController < ApplicationController
   end
 
   def show
+    @area = Area.find(params[:id])
   end
 
   def new
@@ -25,5 +26,32 @@ class AreasController < ApplicationController
   end
 
   def edit
+    @area = Area.find(params[:id])
+  end
+
+  def update
+    @area = Area.find(params[:id])
+    @area.title = params[:area][:title]
+    @area.body = params[:area][:body]
+
+    if @area.save
+      flash[:notice] = "Area was updated."
+      redirect_to @area
+    else
+      flash.now[:alert] = "There was an error saving the area. Please try again."
+      render :edit
+    end
+  end
+
+  def destroy
+    @area = Area.find(params[:id])
+
+    if @area.destroy
+      flash[:notice] = "\"#{@area.title}\" was deleted successfully."
+      redirect_to areas_path
+    else
+      flash.now[:alert] = "There was an error deleting the area."
+      render :show
+    end
   end
 end
