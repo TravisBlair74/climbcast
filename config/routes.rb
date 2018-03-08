@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'users_controller/show'
+  resources :areas
 
+  get 'users/show'
   devise_for :users
-  get 'welcome/index'
-  get 'welcome/about'
+
+  get 'about' => 'welcome#about'
+
   root 'welcome#index'
 end
