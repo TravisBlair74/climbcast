@@ -2,7 +2,9 @@
   <div class="media-body">
     <small>
       User#<%= comment.user_id %> commented <%= time_ago_in_words(comment.created_at) %> ago
-      <%= link_to "Delete", [@area, comment], method: :delete %>
+      <% if current_user && (current_user == comment.user || current_user.admin?) %>
+        <%= link_to "Delete", [@area, comment], method: :delete %>
+      <% end %>
     </small>
     <p><%= comment.body %></p>
   </div>
