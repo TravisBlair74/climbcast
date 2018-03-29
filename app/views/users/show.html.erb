@@ -2,6 +2,7 @@
 <body>
   <% if user_signed_in? %>
     <div>Welcome, <strong><%= current_user.email %></strong></div>
+    <div>Your username is: <strong><%= current_user.username %></strong></div>
     <div>Your user role is: <strong><%= current_user.role %></strong></div>
     <div><%= link_to 'Edit profile', edit_user_registration_path, class: 'btn btn-primary btnspace' %></div>
   <% else %>

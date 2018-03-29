@@ -4,7 +4,7 @@
       <h1><%= @area.title %></h1>
       <p><%= @area.body %></p>
       <h2>Comments:</h2>
-      <%= render @area.comments %>
+      <%= render @area.comments, user: @user %>
       <%= render 'comments/form', comment: Comment.new, area: @area %>
     </div>
     <div class="col">
@@ -17,7 +17,7 @@
 
 <% if current_user && current_user.admin? %>
   <div>
-      <%= link_to "Edit Area", edit_area_path(@area), class: 'btn btn-success' %>
+      <%= link_to "Edit Area", edit_area_path(@area), class: 'btn btn-primary' %>
       <%= link_to "Delete Area", @area, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this area?'} %>
   </div>
 <% end %>
