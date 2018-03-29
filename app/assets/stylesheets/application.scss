@@ -15,3 +15,11 @@
  *= require_tree .
  *= require_self
  */
+ .newbtn {
+   margin-top: 10px;
+ }
+
+ body {
+   background: url(background-image.jpg) center / cover;
+   height: 100vh;
+ }
