@@ -25,6 +25,9 @@
  }
 
  body {
-   background: url(background-image.jpg) center / cover;
-   height: 100vh;
- }
+  background: url(background-image.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def create
     @area = Area.find(params[:area_id])
     comment = @area.comments.new(comment_params)
-    comment.user = current_user
+    comment.user = current_user || User.find(5)
 
     if comment.save
       flash[:notice] = "Comment saved successfully."
