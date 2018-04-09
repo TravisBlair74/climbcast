@@ -29,6 +29,10 @@
         <%= f.label :body %>
         <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter area description" %>
       <% end %>
+      <%= form_group_tag(@area.errors[:url]) do %>
+        <%= f.label :url %>
+        <%= f.text_field :url, class: 'form-control', placeholder: "URL from Meteoblue.  Example: chattanooga_united-states-of-america_4612862" %>
+      <% end %>
       <div class="form-group">
         <%= f.submit "Save", class: 'btn btn-success' %>
       </div>

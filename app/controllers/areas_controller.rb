@@ -15,6 +15,7 @@ class AreasController < ApplicationController
     @area = Area.new
     @area.title = params[:area][:title]
     @area.body = params[:area][:body]
+    @area.url = params[:area][:url]
 
     if @area.save
       flash[:notice] = "Area was created successfully."
