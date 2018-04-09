@@ -1,7 +1,7 @@
 <div class="media">
   <div class="media-body">
     <small>
-      <%= comment.user_handle %> commented <%= time_ago_in_words(comment.created_at) %> ago
+      <strong><%= comment.user_handle %></strong> commented <%= time_ago_in_words(comment.created_at) %> ago
       <% if current_user && (current_user == comment.user || current_user.admin?) %>
         <%= link_to "Delete", [@area, comment], method: :delete %>
       <% end %>
