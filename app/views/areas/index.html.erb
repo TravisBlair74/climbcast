@@ -7,12 +7,13 @@
   <div class="media">
     <div class="media-body">
       <h4 class="media-heading">
-          <%= link_to area.title, area %>
+          <%= link_to area.title, area, class: 'btn btn-primary btnspace' %>
       </h4>
     </div>
   </div>
 <% end %>
 
 <% if current_user && current_user.admin? %>
+  <h3>Administrator Options:</h3>
   <%= link_to "Add New Area", new_area_path, class: 'btn btn-primary btnspace' %>
 <% end %>
